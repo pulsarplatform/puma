@@ -1,5 +1,5 @@
 %%{
-  
+
   machine puma_parser_common;
 
 #### HTTP PROTOCOL GRAMMAR
@@ -16,7 +16,7 @@
   unreserved = (alpha | digit | safe | extra | national);
   escape = ("%" xdigit xdigit);
   uchar = (unreserved | escape | "%");
-  pchar = (uchar | ":" | "@" | "&" | "=" | "+");
+  pchar = (uchar | ":" | "@" | "&" | "=" | "+" | ";");
   tspecials = ("(" | ")" | "<" | ">" | "@" | "," | ";" | ":" | "\\" | "\"" | "/" | "[" | "]" | "?" | "=" | "{" | "}" | " " | "\t");
 
 # elements
