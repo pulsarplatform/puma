@@ -10,7 +10,7 @@
   CTL = (cntrl | 127);
   safe = ("$" | "-" | "_" | ".");
   extra = ("!" | "*" | "'" | "(" | ")" | ",");
-  reserved = (";" | "/" | "?" | ":" | "@" | "&" | "=" | "+");
+  reserved = ("/" | "?" | ":" | "@" | "&" | "=" | "+");
   unsafe = (CTL | " " | "\"" | "#" | "%" | "<" | ">");
   national = any -- (alpha | digit | reserved | extra | safe | unsafe);
   unreserved = (alpha | digit | safe | extra | national);
