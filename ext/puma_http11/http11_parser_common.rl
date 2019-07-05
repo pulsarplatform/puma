@@ -10,7 +10,7 @@
   CTL = (cntrl | 127);
   safe = ("$" | "-" | "_" | ".");
   extra = ("!" | "*" | "'" | "(" | ")" | ",");
-  reserved = ("/" | "?" | ":" | "@" | "&" | "=" | "+");
+  reserved = (";" | "/" | "?" | ":" | "@" | "&" | "=" | "+");
   unsafe = (CTL | " " | "\"" | "#" | "%" | "<" | ">");
   national = any -- (alpha | digit | reserved | extra | safe | unsafe);
   unreserved = (alpha | digit | safe | extra | national);
@@ -30,7 +30,7 @@
   query = ( uchar | reserved )* %query_string ;
   param = ( pchar | "/" )* ;
   params = ( param ( ";" param )* ) ;
-  rel_path = ( path? %request_path (";" params)? ) ("?" %start_query query)?;
+  rel_path = ( path? %request_path ) ("?" %start_query query)?;
   absolute_path = ( "/"+ rel_path );
 
   Request_URI = ( "*" | absolute_uri | absolute_path ) >mark %request_uri;
